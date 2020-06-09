@@ -81,7 +81,7 @@ FROM orders
 ORDER BY order_date DESC
 ```
 
-* [ ] ***find all suppliers who have names longer than 20 characters. Returns 11 records***
+* [x] ***find all suppliers who have names longer than 20 characters. Returns 11 records***
 
   <details><summary>hint</summary>
 
@@ -89,8 +89,10 @@ ORDER BY order_date DESC
   * You can use `length(company_name)` to get the length of the name
   </details>
 
-```SQL
-
+```
+SELECT *
+FROM suppliers
+WHERE LENGTH(company_name) > 20
 ```
 
 * [ ] ***find all customers that include the word 'MARKET' in the contact title. Should return 19 records***
