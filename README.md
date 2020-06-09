@@ -29,7 +29,7 @@ Reimport the Northwind database into PostgreSQL using pgAdmin. This is the same 
 
 ### Answer the following data queries. Keep track of the SQL you write by pasting it into this document under its appropriate header below in the provided SQL code block. You will be submitting that through the regular fork, change, pull process
 
-* [ ] ***find all customers that live in London. Returns 6 records***
+* [x] ***find all customers that live in London. Returns 6 records***
 
   <details><summary>hint</summary>
 
@@ -37,10 +37,12 @@ Reimport the Northwind database into PostgreSQL using pgAdmin. This is the same 
   </details>
 
 ```SQL
-
+SELECT *
+FROM customers
+WHERE city = 'London'
 ```
 
-* [ ] ***find all customers with postal code 1010. Returns 3 customers***
+* [x] ***find all customers with postal code 1010. Returns 3 customers***
 
   <details><summary>hint</summary>
 
@@ -48,10 +50,12 @@ Reimport the Northwind database into PostgreSQL using pgAdmin. This is the same 
   </details>
 
 ```SQL
-
+SELECT *
+FROM customers
+WHERE postal_code = '1010'
 ```
 
-* [ ] ***find the phone number for the supplier with the id 11. Should be (010) 9984510***
+* [x] ***find the phone number for the supplier with the id 11. Should be (010) 9984510***
 
   <details><summary>hint</summary>
 
@@ -59,10 +63,12 @@ Reimport the Northwind database into PostgreSQL using pgAdmin. This is the same 
   </details>
 
 ```SQL
-
+SELECT phone
+FROM suppliers
+WHERE supplier_id = '11'
 ```
 
-* [ ] ***list orders descending by the order date. The order with date 1998-05-06 should be at the top***
+* [x] ***list orders descending by the order date. The order with date 1998-05-06 should be at the top***
 
   <details><summary>hint</summary>
 
@@ -70,7 +76,9 @@ Reimport the Northwind database into PostgreSQL using pgAdmin. This is the same 
   </details>
 
 ```SQL
-
+SELECT *
+FROM orders
+ORDER BY order_date DESC
 ```
 
 * [ ] ***find all suppliers who have names longer than 20 characters. Returns 11 records***
